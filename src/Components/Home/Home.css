@@ -1,0 +1,8 @@
+.top-menu{
+    display: flex;
+    justify-content: flex-end;
+    padding:10px 15px 5px 0px ;
+}
+.new-btn{
+    padding-right: 1px;
+}
