@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-        <Route path = "/form">
+        <Route path = "/form/basicdata">
             <Form/>
           </Route>
         <Route path = "/delete/:id">

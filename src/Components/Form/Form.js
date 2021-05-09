@@ -9,7 +9,7 @@ const Form = () => {
         <Router>
         <Create/>
         <Switch>
-          <Route  path = "/form">
+          <Route  path = "/form/basicdata">
             <Basicdata/>
           </Route>
         </Switch>

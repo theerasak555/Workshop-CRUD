@@ -11,14 +11,18 @@ const Home = () => {
     return (
         <div>
             <div className="top-menu">
-            <div className="new-btn"><Link to="/form"><Button variant="success" size="sm">New</Button></Link></div>
+            <div className="new-btn"><Link to="/form/basicdata"><Button variant="success" size="sm">New</Button></Link></div>
                 <Link to="/form"><Button variant="success" size="sm">+</Button></Link>
+            </div>
+            <div className="topnav-actionmenu">
+
             </div>
             <div>
                 <Table responsive="sm">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th></th>
+                            <th></th>
                             <th>วันที่เอกเอกสาร</th>
                             <th>เลขที่เอกสาร</th>
                             <th>รหัสผู้ขาย</th>
@@ -32,6 +36,7 @@ const Home = () => {
                         { orders.map(order =>
                             
                         <tr key={order.id}>
+                            <td></td>
                             <td><EditIcon color="primary" />
                                 <Link to={"/delete/"+order.id}><DeleteIcon color="secondary" /></Link>
                                 </td>
