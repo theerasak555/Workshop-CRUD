@@ -218,7 +218,7 @@ const Basicdata = () => {
                             <th></th>
                             <th>No.</th>
                             <th>รหัสสินค้า</th>
-                            <th>ชื่อสินค้า</th>
+                            <th style={{width:"30%"}}>ชื่อสินค้า</th>
                             <th>หน่วยนับ</th>
                             <th>คลัง</th>
                             <th>ที่เก็บ</th>
@@ -236,7 +236,7 @@ const Basicdata = () => {
                             <td>
                                 <Form>
                                     <Form.Row>
-                                        <Col sm="5">
+                                        <Col sm="12">
                                             <Form.Control
                                                 type="text"
                                                 name="productNo"
@@ -250,7 +250,7 @@ const Basicdata = () => {
                             <td>
                                 <Form>
                                     <Form.Row>
-                                        <Col sm="15">
+                                        <Col sm="12">
                                             <Form.Control
                                                 type="text"
                                                 name="productName"
@@ -264,7 +264,7 @@ const Basicdata = () => {
                             <td>
                                 <Form>
                                     <Form.Row>
-                                        <Col sm="5">
+                                        <Col sm="12">
                                             <Form.Control
                                                 type="text"
                                                 name="unit"
@@ -277,7 +277,7 @@ const Basicdata = () => {
                             </td>
                             <td><Form>
                                 <Form.Row>
-                                    <Col sm="5">
+                                    <Col sm="12">
                                         <Form.Control
                                             type="text"
                                             name="store"
@@ -290,7 +290,7 @@ const Basicdata = () => {
                             </td>
                             <td><Form>
                                 <Form.Row>
-                                    <Col sm="5">
+                                    <Col sm="12">
                                         <Form.Control
                                             type="text"
                                             name="whereStore"
@@ -303,7 +303,7 @@ const Basicdata = () => {
                             </td>
                             <td><Form>
                                 <Form.Row>
-                                    <Col sm="5">
+                                    <Col sm="12">
                                         <Form.Control
                                             type="number"
                                             name="quantity"
@@ -316,7 +316,7 @@ const Basicdata = () => {
                             </td>
                             <td><Form>
                                 <Form.Row>
-                                    <Col sm="5">
+                                    <Col sm="12">
                                         <Form.Control
                                             type="number"
                                             name="priceUnit"
@@ -328,7 +328,7 @@ const Basicdata = () => {
                             </Form></td>
                             <td><Form>
                                 <Form.Row>
-                                    <Col sm="5">
+                                    <Col sm="12">
                                         <Form.Control
                                             type="text"
                                             name="discount"
@@ -341,7 +341,7 @@ const Basicdata = () => {
                             </td>
                             <td><Form>
                                 <Form.Row>
-                                    <Col sm="5">
+                                    <Col sm="12">
                                         <Form.Control
                                             type="number"
                                             name="price"
@@ -358,7 +358,7 @@ const Basicdata = () => {
                             <td>
                                 <Form>
                                     <Form.Row>
-                                        <Col sm="5">
+                                        <Col sm="12">
                                             <Form.Control
                                                 type="text"
                                                 name="productNo"
@@ -372,7 +372,7 @@ const Basicdata = () => {
                             <td>
                                 <Form>
                                     <Form.Row>
-                                        <Col sm="15">
+                                        <Col sm="12">
                                             <Form.Control
                                                 type="text"
                                                 name="productName"
@@ -386,7 +386,7 @@ const Basicdata = () => {
                             <td>
                                 <Form>
                                     <Form.Row>
-                                        <Col sm="5">
+                                        <Col sm="12">
                                             <Form.Control
                                                 type="text"
                                                 name="unit"
@@ -399,7 +399,7 @@ const Basicdata = () => {
                             </td>
                             <td><Form>
                                 <Form.Row>
-                                    <Col sm="5">
+                                    <Col sm="12">
                                         <Form.Control
                                             type="text"
                                             name="store"
@@ -412,7 +412,7 @@ const Basicdata = () => {
                             </td>
                             <td><Form>
                                 <Form.Row>
-                                    <Col sm="5">
+                                    <Col sm="12">
                                         <Form.Control
                                             type="text"
                                             name="whereStore"
@@ -425,7 +425,7 @@ const Basicdata = () => {
                             </td>
                             <td><Form>
                                 <Form.Row>
-                                    <Col sm="5">
+                                    <Col sm="12">
                                         <Form.Control
                                             type="number"
                                             name="quantity"
@@ -438,7 +438,7 @@ const Basicdata = () => {
                             </td>
                             <td><Form>
                                 <Form.Row>
-                                    <Col sm="5">
+                                    <Col sm="12">
                                         <Form.Control
                                             type="number"
                                             name="priceUnit"
@@ -450,7 +450,7 @@ const Basicdata = () => {
                             </Form></td>
                             <td><Form>
                                 <Form.Row>
-                                    <Col sm="5">
+                                    <Col sm="12">
                                         <Form.Control
                                             type="text"
                                             name="discount"
@@ -463,7 +463,7 @@ const Basicdata = () => {
                             </td>
                             <td><Form>
                                 <Form.Row>
-                                    <Col sm="5">
+                                    <Col sm="12">
                                         <Form.Control
                                             type="number"
                                             name="price"
