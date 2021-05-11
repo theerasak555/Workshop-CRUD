@@ -1,24 +1,76 @@
-import React,{useContext} from 'react';
-import {Link} from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
-import { Button, Table } from 'react-bootstrap'
+import SearchIcon from '@material-ui/icons/Search';
+import { Button, Table, Dropdown, DropdownButton, ButtonGroup, InputGroup, FormControl } from 'react-bootstrap'
 import './Home.css'
-import {OrderContext} from '../OrderContext/OrderContext.js'
+import { OrderContext } from '../OrderContext/OrderContext.js'
 
 const Home = () => {
-    const [orders,setOrders] = useContext(OrderContext);
+    const [orders, setOrders] = useContext(OrderContext);
     return (
-        <div>
+        <div className="home">
             <div className="top-menu">
-            <div className="new-btn"><Link to="/form/basicdata"><Button variant="success" size="sm">New</Button></Link></div>
+                <div className="new-btn"><Link to="/form/basicdata"><Button variant="success" size="sm">New</Button></Link></div>
                 <Link to="/form"><Button variant="success" size="sm">+</Button></Link>
-            </div>
+            </div><hr/>
             <div className="topnav-actionmenu">
-
+                <div className="sort-menu">
+                    <div className="mb-2">
+                        {[DropdownButton].map((DropdownType, idx) => (
+                            <DropdownType
+                                as={ButtonGroup}
+                                key={idx}
+                                id={`dropdown-button-drop-${idx}`}
+                                size="sm"
+                                variant="outline-secondary"
+                                title="All Order"
+                            >
+                                <Dropdown.Item eventKey="1">ชื่อผู้ขาย</Dropdown.Item>
+                                <Dropdown.Item eventKey="2">เลขที่เอกสาร</Dropdown.Item>
+                                <Dropdown.Item eventKey="3">วันที่เอกเอกสาร</Dropdown.Item>
+                            </DropdownType>
+                        ))}
+                    </div>
+                    <div>
+                        <InputGroup size="sm" className="mb-2">
+                            <FormControl
+                                type="text"
+                                aria-label="Small"
+                                aria-describedby="inputGroup-sizing-sm"
+                            />
+                            <InputGroup.Append>
+                                <Button variant="outline-secondary" size="sm"><SearchIcon style={{ fontSize: 16 }} /></Button>
+                            </InputGroup.Append>
+                        </InputGroup>
+                    </div>
+                </div>
+                <div className="action-menu">
+                    <div className="btn-act">
+                        <Button size="sm" variant="outline-primary"><EditIcon style={{ fontSize: 16 }}/></Button>
+                        <Button size="sm" variant="outline-primary"><DeleteIcon style={{ fontSize: 16 }}/></Button>
+                    </div>
+                    <div className="mb-2">
+                        {[DropdownButton].map((DropdownType, idx) => (
+                            <DropdownType
+                                as={ButtonGroup}
+                                key={idx}
+                                id={`dropdown-button-drop-${idx}`}
+                                size="sm"
+                                variant="outline-primary"
+                                title="Action"
+                            >
+                                <Dropdown.Item eventKey="1">Delete</Dropdown.Item>
+                                <Dropdown.Item eventKey="2">Add</Dropdown.Item>
+                                <Dropdown.Item eventKey="3">Edit</Dropdown.Item>
+                            </DropdownType>
+                        ))}
+                    </div>
+                </div>
             </div>
             <div>
-                <Table responsive="sm">
+                <Table responsive="sm" responsive="md">
                     <thead>
                         <tr>
                             <th></th>
@@ -33,21 +85,21 @@ const Home = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        { orders.map(order =>
-                            
-                        <tr key={order.id}>
-                            <td></td>
-                            <td><EditIcon color="primary" />
-                                <Link to={"/delete/"+order.id}><DeleteIcon color="secondary" /></Link>
+                        {orders.map(order =>
+
+                            <tr key={order.id}>
+                                <td></td>
+                                <td><EditIcon color="primary"/>
+                                    <Link to={"/delete/" + order.id}><DeleteIcon color="secondary"/></Link>
                                 </td>
-                            <td>{order.date}</td>
-                            <td>{order.no}</td>
-                            <td>{order.codesale}</td>
-                            <td>{order.salename}</td>
-                            <td>{order.totalprice}</td>
-                            <td>{order.status}</td>
-                            <td>{order.dename}</td>
-                        </tr>
+                                <td>{order.date}</td>
+                                <td>{order.no}</td>
+                                <td>{order.codesale}</td>
+                                <td>{order.salename}</td>
+                                <td>{order.totalprice}</td>
+                                <td>{order.status}</td>
+                                <td>{order.dename}</td>
+                            </tr>
                         )}
                     </tbody>
                 </Table>
