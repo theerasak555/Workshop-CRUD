@@ -7,11 +7,11 @@ import './Delete.css'
 
 const Delete = () => {
     const [orders,setOrders] = useContext(OrderContext);
-    const {id} =useParams();
+    const {Order_id} =useParams();
   console.log(orders);
 
-    const deleteORder = (id) =>{
-    const order = orders.filter(order => order.id != id);
+    const deleteORder = (Order_id) =>{
+    const order = orders.filter(order => order.Order_id !== Order_id);
         setOrders(order) 
 } 
     return (
@@ -22,7 +22,7 @@ const Delete = () => {
         <Modal.Footer>
           <Link to="/">
             <Button className="delete__btn" variant="info">ยกเลิก</Button>{" "}
-            <Button onClick={()=> deleteORder(id)} variant="danger">
+            <Button onClick={()=> deleteORder(Order_id)} variant="danger">
               ลบ
             </Button>
           </Link>

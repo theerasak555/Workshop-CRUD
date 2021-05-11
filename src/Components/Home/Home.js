@@ -5,10 +5,13 @@ import EditIcon from '@material-ui/icons/Edit';
 import SearchIcon from '@material-ui/icons/Search';
 import { Button, Table, Dropdown, DropdownButton, ButtonGroup, InputGroup, FormControl } from 'react-bootstrap'
 import './Home.css'
-import { OrderContext } from '../OrderContext/OrderContext.js'
+import { OrderContext} from '../OrderContext/OrderContext.js'
+import {ProductContext} from '../ProductContext/ProductContext.js'
 
 const Home = () => {
     const [orders, setOrders] = useContext(OrderContext);
+    const [products,setProducts] =useContext(ProductContext);
+
     return (
         <div className="home">
             <div className="top-menu">
@@ -90,15 +93,15 @@ const Home = () => {
                             <tr key={order.id}>
                                 <td></td>
                                 <td><EditIcon color="primary"/>
-                                    <Link to={"/delete/" + order.id}><DeleteIcon color="secondary"/></Link>
+                                    <Link to={"/delete/" + order.Order_id}><DeleteIcon color="secondary"/></Link>
                                 </td>
-                                <td>{order.date}</td>
-                                <td>{order.no}</td>
-                                <td>{order.codesale}</td>
-                                <td>{order.salename}</td>
-                                <td>{order.totalprice}</td>
-                                <td>{order.status}</td>
-                                <td>{order.dename}</td>
+                                <td>{order.Inform_date}</td>
+                                <td>{order.Inform_id}</td>
+                                <td>{order.Sale_id}</td>
+                                <td>{order.Sale_name}</td>
+                                <td >{order.total}</td>
+                                <td>{order.Status}</td>
+                                <td>{order.Contract}</td>
                             </tr>
                         )}
                     </tbody>

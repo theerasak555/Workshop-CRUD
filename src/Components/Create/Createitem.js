@@ -2,10 +2,10 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import './Create.css'
 
-const Createitem = ({item,tolink}) => {
+const Createitem = ({item,to}) => {
     return (
         <li id={item}>
-            <Link to={tolink}>{item}</Link>
+            <Link to={to}>{item}</Link>
         </li>
     );
 };

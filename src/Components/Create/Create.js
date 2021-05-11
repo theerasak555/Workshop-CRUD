@@ -17,9 +17,9 @@ const Create = () => {
        
         <nav>
             <ul>
-                <Createitem item="Basic Data" tolink="/form/basicdata"></Createitem>
-                <Createitem item="Data" tolink="data"></Createitem>
-                <Createitem item={"Note&Attachment"} tolink={"Note&Attachment"}></Createitem>
+                <Createitem item="Basic Data" to="/form/basicdata"></Createitem>
+                <Createitem item="Data" to="data"></Createitem>
+                <Createitem item={"Note&Attachment"} to={"Note&Attachment"}></Createitem>
             </ul>
         </nav>
         </div>

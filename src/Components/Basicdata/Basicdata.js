@@ -5,9 +5,12 @@ import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { OrderContext } from '../OrderContext/OrderContext.js'
+import { ProductContext } from '../ProductContext/ProductContext.js'
+import {Link} from 'react-router-dom'
 
 const Basicdata = () => {
     const [orders, setOrders] = useContext(OrderContext);
+    const [products, setProducts] = useContext(ProductContext);
     //input
     const [codesale, setCodesale] = useState("");
     const [no, setNo] = useState("");
@@ -20,7 +23,6 @@ const Basicdata = () => {
     const [sentDate, setSentdate] = useState("");
     const [bill, setBill] = useState("");
 
-    const [id, setId] = useState("");
     const [productNo, setProductno] = useState("");
     const [productName, setProductname] = useState("");
     const [unit, setUnit] = useState("");
@@ -92,7 +94,7 @@ const Basicdata = () => {
 
     const addOrders = (e) => {
         e.preventDefault();
-        setOrders([...orders, { id: id, date: date, no: no, codesale: codesale, saleName: saleName, }])
+        setOrders([...orders, { Sale_id: codesale, Inform_id: no, Inform_date: date, Sale_name: saleName, Want_date: wantDate, End_date: endDate, Contract: contractName, Credit: credit, Sent_date: sentDate, Bill: bill }])
     }
 
     return (
@@ -218,7 +220,7 @@ const Basicdata = () => {
                             <th></th>
                             <th>No.</th>
                             <th>รหัสสินค้า</th>
-                            <th style={{width:"30%"}}>ชื่อสินค้า</th>
+                            <th style={{ width: "30%" }}>ชื่อสินค้า</th>
                             <th>หน่วยนับ</th>
                             <th>คลัง</th>
                             <th>ที่เก็บ</th>
