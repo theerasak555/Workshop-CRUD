@@ -6,7 +6,6 @@ import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { OrderContext } from '../OrderContext/OrderContext.js'
 import { ProductContext } from '../ProductContext/ProductContext.js'
-import {Link} from 'react-router-dom'
 
 const Basicdata = () => {
     const [orders, setOrders] = useContext(OrderContext);
@@ -93,10 +92,10 @@ const Basicdata = () => {
         setPrice(e.target.value);
     };
 
-    const addOrders = (e) => {
+    const addOrders = e => {
         e.preventDefault();
         setOrders([orders, { Sale_id: codesale, Inform_id: no, Inform_date: date, Sale_name: saleName, Want_date: wantDate, End_date: endDate, Contract: contractName, Credit: credit, Sent_date: sentDate, Bill: bill }])
-    }; console.log(addOrders);
+    }; console.log(orders);
 
     return (
         <div className="basicdata">
