@@ -32,7 +32,8 @@ const Basicdata = () => {
     const [priceUnit, setPriceunit] = useState("");
     const [discount, setDiscount] = useState("");
     const [price, setPrice] = useState("");
-
+ 
+    console.log(orders);
     //update
     const updateCodesale = (e) => {
         setCodesale(e.target.value);
@@ -94,8 +95,8 @@ const Basicdata = () => {
 
     const addOrders = (e) => {
         e.preventDefault();
-        setOrders([...orders, { Sale_id: codesale, Inform_id: no, Inform_date: date, Sale_name: saleName, Want_date: wantDate, End_date: endDate, Contract: contractName, Credit: credit, Sent_date: sentDate, Bill: bill }])
-    }
+        setOrders([orders, { Sale_id: codesale, Inform_id: no, Inform_date: date, Sale_name: saleName, Want_date: wantDate, End_date: endDate, Contract: contractName, Credit: credit, Sent_date: sentDate, Bill: bill }])
+    }; console.log(addOrders);
 
     return (
         <div className="basicdata">
@@ -512,6 +513,7 @@ const Basicdata = () => {
                     </tbody>
                 </Table>
             </div>
+            <Button variant="success" size="sm" type="submit">Save</Button>
         </div>
     );
 };

@@ -73,7 +73,7 @@ const Home = () => {
                 </div>
             </div>
             <div>
-                <Table responsive="sm" responsive="md">
+                <Table responsive="sm md">
                     <thead>
                         <tr>
                             <th></th>
