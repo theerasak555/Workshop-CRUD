@@ -6,29 +6,29 @@ import { Button, Modal } from "react-bootstrap";
 import './Delete.css'
 
 const Delete = () => {
-    const [orders,setOrders] = useContext(OrderContext);
-    const {Order_id} =useParams();
-  console.log(orders);
+  const [orders, setOrders] = useContext(OrderContext); 
+  const { Inform_id } = useParams();
 
-    const deleteORder = (Order_id) =>{
-    const order = orders.filter(order => order.Order_id !== Order_id);
-        setOrders(order) 
-} 
-    return (
-        <Modal.Dialog>
+  const deleteUser = (Inform_id) => {
+    const order = orders.filter((order) => order.Inform_id != Inform_id);
+    setOrders([...order]);
+  };
+
+  return (
+    <div>
+      <Modal.Dialog>
         <Modal.Header closeButton>
-          <Modal.Title>คุณแน่ใจที่จะลบ?</Modal.Title>
+          <Modal.Title>คุณต้องการลบ ?</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
           <Link to="/">
             <Button className="delete__btn" variant="info">ยกเลิก</Button>{" "}
-            <Button onClick={()=> deleteORder(Order_id)} variant="danger">
-              ลบ
-            </Button>
+            <Button onClick={() => deleteUser(Inform_id)} variant="danger">ลบ</Button>
           </Link>
         </Modal.Footer>
       </Modal.Dialog>
-    );
+    </div>
+  );
 };
 
 export default Delete;

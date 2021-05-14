@@ -1,107 +1,161 @@
 import React, { useContext, useState } from 'react';
-import './Basicdata.css'
+import './Edit.css'
+import { OrderContext } from '../OrderContext/OrderContext.js'
+import { useParams } from 'react-router-dom'
 import { Form, Col, Table, Button } from 'react-bootstrap'
 import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { OrderContext } from '../OrderContext/OrderContext.js'
 import { ProductContext } from '../ProductContext/ProductContext.js'
+import { Link } from 'react-router-dom'
 
-const Basicdata = () => {
+const Edit = () => {
     const [orders, setOrders] = useContext(OrderContext);
-    const [products, setProducts] = useContext(ProductContext);
+    const { Inform_id } = useParams();
+
+    const order = orders.filter((order) =>
+        order.Inform_id = Inform_id);
+
     //input
-    const [codesale, setCodesale] = useState("");
-    const [no, setNo] = useState("");
-    const [date, setDate] = useState("");
-    const [saleName, setSalename] = useState("");
-    const [wantDate, setWantdate] = useState("");
-    const [endDate, setEnddate] = useState("");
-    const [contractName, setContractname] = useState("");
-    const [credit, setCredit] = useState("");
-    const [sentDate, setSentdate] = useState("");
-    const [bill, setBill] = useState("");
+    const [codesale, setCodesale] = useState(order[0].codesale);
+    const [no, setNo] = useState(order[0].no);
+    const [date, setDate] = useState(order[0].date);
+    const [saleName, setSalename] = useState(order[0].saleName);
+    const [wantDate, setWantdate] = useState(order[0].wantDate);
+    const [endDate, setEnddate] = useState(order[0].endDate);
+    const [contractName, setContractname] = useState(order[0].contractName);
+    const [credit, setCredit] = useState(order[0].credit);
+    const [sentDate, setSentdate] = useState(order[0].sentDate);
+    const [bill, setBill] = useState(order[0].bill);
 
-    const [productNo, setProductno] = useState("");
-    const [productName, setProductname] = useState("");
-    const [unit, setUnit] = useState("");
-    const [store, setStore] = useState("");
-    const [whereStore, setWherestote] = useState("");
-    const [quantity, setQuantity] = useState("");
-    const [priceUnit, setPriceunit] = useState("");
-    const [discount, setDiscount] = useState("");
-    const [price, setPrice] = useState("");
- 
-    console.log(orders);
-    //update
-    const updateCodesale = (e) => {
+    const [productNo, setProductno] = useState(order[0].productNo);
+    const [productName, setProductname] = useState(order[0].productName);
+    const [unit, setUnit] = useState(order[0].unit);
+    const [store, setStore] = useState(order[0].store);
+    const [whereStore, setWherestote] = useState(order[0].whereStore);
+    const [quantity, setQuantity] = useState(order[0].quantity);
+    const [priceUnit, setPriceunit] = useState(order[0].priceUnit);
+    const [discount, setDiscount] = useState(order[0].discount);
+    const [price, setPrice] = useState(order[0].price);
+
+    //edit
+    const editCodesale = (e) => {
         setCodesale(e.target.value);
+        const edited_codesale = codesale;
+        order[0].codesale = edited_codesale;
     };
-    const updateNo = (e) => {
+    const editNo = (e) => {
         setNo(e.target.value);
+        const edited_no = no;
+        order[0].no = edited_no;
     };
-    const updateDate = (e) => {
+    const editDate = (e) => {
         setDate(e.target.value);
+        const edited_date = date;
+        order[0].date = edited_date;
     };
-    const updateSalename = (e) => {
+    const editSalename = (e) => {
         setSalename(e.target.value);
+        const edited_saleName = saleName;
+        order[0].saleName = edited_saleName;
     };
-    const updateWantdate = (e) => {
+    const editWantdate = (e) => {
         setWantdate(e.target.value);
+        const edited_wantDate = wantDate;
+        order[0].wantDate = edited_wantDate;
     };
-    const updateEnddate = (e) => {
+    const editEnddate = (e) => {
         setEnddate(e.target.value);
+        const edited_endDate = endDate;
+        order[0].endDate = edited_endDate;
     };
-    const updateContractname = (e) => {
+    const editContractname = (e) => {
         setContractname(e.target.value);
+        const edited_contractName = contractName;
+        order[0].contractName = edited_contractName;
     };
-    const updateCredit = (e) => {
+    const editCredit = (e) => {
         setCredit(e.target.value);
+        const edited_credit = credit;
+        order[0].credit = edited_credit;
     };
-    const updateSentdate = (e) => {
+    const editSentdate = (e) => {
         setSentdate(e.target.value);
+        const edited_sentDate = sentDate;
+        order[0].sentDate = edited_sentDate;
     };
-    const updateBill = (e) => {
+    const editBill = (e) => {
         setBill(e.target.value);
+        const edited_bill = bill;
+        order[0].bill = edited_bill;
     };
-    const updateProductno = (e) => {
+    const editProductno = (e) => {
         setProductno(e.target.value);
+        const edited_productNo = productNo;
+        order[0].productNo = edited_productNo;
     };
-    const updateProductname = (e) => {
+    const editProductname = (e) => {
         setProductname(e.target.value);
+        const edited_productName = productName;
+        order[0].productName = edited_productName;
     };
-    const updateUnit = (e) => {
+    const editUnit = (e) => {
         setUnit(e.target.value);
+        const edited_unit = unit;
+        order[0].unit = edited_unit;
     };
-    const updateStore = (e) => {
+    const editStore = (e) => {
         setStore(e.target.value);
+        const edited_store = store;
+        order[0].store = edited_store;
     };
-    const updateWherestore = (e) => {
+    const editWherestore = (e) => {
         setWherestote(e.target.value);
+        const edited_whereStore = whereStore;
+        order[0].whereStore = edited_whereStore;
     };
-    const updateQuantity = (e) => {
+    const editQuantity = (e) => {
         setQuantity(e.target.value);
+        const edited_quantity = quantity;
+        order[0].quantity = edited_quantity;
     };
-    const updatePriceunit = (e) => {
+    const editPriceunit = (e) => {
         setPriceunit(e.target.value);
+        const edited_priceUnit = priceUnit;
+        order[0].priceUnit = edited_priceUnit;
     };
-    const updateDiscount = (e) => {
+    const editDiscount = (e) => {
         setDiscount(e.target.value);
+        const edited_discount = discount;
+        order[0].discount = edited_discount;
     };
-    const updatePrice = (e) => {
+    const editPrice = (e) => {
         setPrice(e.target.value);
+        const edited_price = price;
+        order[0].price = edited_price;
     };
 
-    const addOrders = e => {
+    const editOrder = (e) => {
         e.preventDefault();
-        setOrders([orders, { Sale_id: codesale, Inform_id: no, Inform_date: date, Sale_name: saleName, Want_date: wantDate, End_date: endDate, Contract: contractName, Credit: credit, Sent_date: sentDate, Bill: bill }])
-    }; console.log(orders);
+        setOrders([...orders])
+    }
 
     return (
         <div className="basicdata">
+            <div className="topnav-menu">
+                <Link to="/"><h5>{"< New Purchase"}</h5></Link>
+                <div className="topnav-button">
+                    <Button variant="primary" size="sm">Preview</Button>{" "}
+                    <Button className="action_btn" variant="success" size="sm" type="submit" onSubmit={() => editOrder}>Save</Button>{" "}
+                    <Button variant="danger" size="sm">Close</Button>
+                </div>
+            </div>
             <div className="form-crud">
-                <Form onSubmit={addOrders}>
+                <Form>
                     <Form.Group>
+                        <Form.Label>
+                            <h1>No : {order[0].Inform_id}</h1>
+                        </Form.Label>
                         <Form.Row>
                             <Form.Label column sm="1"><span style={{ color: "red" }}>*</span>รหัสผู้ขาย</Form.Label>
                             <Col sm="5">
@@ -109,8 +163,9 @@ const Basicdata = () => {
                                     type="text"
                                     name="codesale"
                                     value={codesale}
-                                    onChange={updateCodesale}
-                                />
+                                    onChange={editCodesale}
+                                    placeholder={order[0].codesale}
+                                    required />
                             </Col>
                             <Form.Label column sm="1"><span style={{ color: "red" }}>*</span>เลขที่เอกสาร</Form.Label>
                             <Col >
@@ -118,7 +173,9 @@ const Basicdata = () => {
                                     type="text"
                                     name="no"
                                     value={no}
-                                    onChange={updateNo}
+                                    onChange={editNo}
+                                    placeholder={order[0].no}
+                                    
                                 />
                             </Col>
                             <Form.Label column sm="1"><span style={{ color: "red" }}>*</span>วันที่เอกสาร</Form.Label>
@@ -127,7 +184,9 @@ const Basicdata = () => {
                                     type="date"
                                     name="date"
                                     value={date}
-                                    onChange={updateDate}
+                                    onChange={editDate}
+                                    placeholder={order[0].date}
+                                    
                                 />
                             </Col>
                         </Form.Row><br />
@@ -139,7 +198,8 @@ const Basicdata = () => {
                                     type="text"
                                     name="saleName"
                                     value={saleName}
-                                    onChange={updateSalename}
+                                    onChange={editSalename}
+                                    placeholder={order[0].saleName}
                                 />
                             </Col>
                             <Form.Label column sm="1"><span style={{ visibility: "hidden" }}>*</span>ต้องการภายใน (วัน)</Form.Label>
@@ -148,7 +208,8 @@ const Basicdata = () => {
                                     type="number"
                                     name="wantDate"
                                     value={wantDate}
-                                    onChange={updateWantdate}
+                                    onChange={editWantdate}
+                                    placeholder={order[0].wantDate}
                                 />
                             </Col>
                             <Form.Label column sm="1"><span style={{ visibility: "hidden" }}>*</span>วันที่สิ้นสุด</Form.Label>
@@ -157,7 +218,8 @@ const Basicdata = () => {
                                     type="date"
                                     name="endDate"
                                     value={endDate}
-                                    onChange={updateEnddate}
+                                    onChange={editEnddate}
+                                    placeholder={order[0].endDate}
                                 />
                             </Col>
                         </Form.Row><br />
@@ -169,7 +231,8 @@ const Basicdata = () => {
                                     type="text"
                                     name="contractName"
                                     value={contractName}
-                                    onChange={updateContractname}
+                                    onChange={editContractname}
+                                    placeholder={order[0].contractName}
                                 />
                             </Col>
                             <Form.Label column sm="1"><span style={{ visibility: "hidden" }}>*</span>เครดิต (วัน)</Form.Label>
@@ -178,7 +241,8 @@ const Basicdata = () => {
                                     type="number"
                                     name="credit"
                                     value={credit}
-                                    onChange={updateCredit}
+                                    onChange={editCredit}
+                                    placeholder={order[0].credit}
                                 />
                             </Col>
                             <Form.Label column sm="1"><span style={{ visibility: "hidden" }}>*</span>กำหนดส่งของ</Form.Label>
@@ -187,7 +251,8 @@ const Basicdata = () => {
                                     type="date"
                                     name="sentDate"
                                     value={sentDate}
-                                    onChange={updateSentdate}
+                                    onChange={editSentdate}
+                                    placeholder={order[0].sentDate}
                                 />
                             </Col>
                         </Form.Row><br />
@@ -198,7 +263,8 @@ const Basicdata = () => {
                                     type="text"
                                     name="bill"
                                     value={bill}
-                                    onChange={updateBill}
+                                    onChange={editBill}
+                                    placeholder={order[0].bill}
                                 />
                             </Col>
                         </Form.Row>
@@ -242,8 +308,8 @@ const Basicdata = () => {
                                             <Form.Control
                                                 type="text"
                                                 name="productNo"
-                                                value={productNo}
-                                                onChange={updateProductno}
+                                            //value={productNo}
+                                            //onChange={updateProductno}
                                             />
                                         </Col>
                                     </Form.Row>
@@ -256,8 +322,8 @@ const Basicdata = () => {
                                             <Form.Control
                                                 type="text"
                                                 name="productName"
-                                                value={productName}
-                                                onChange={updateProductname}
+                                            //value={productName}
+                                            //onChange={updateProductname}
                                             />
                                         </Col>
                                     </Form.Row>
@@ -270,8 +336,8 @@ const Basicdata = () => {
                                             <Form.Control
                                                 type="text"
                                                 name="unit"
-                                                value={unit}
-                                                onChange={updateUnit}
+                                            //value={unit}
+                                            //onChange={updateUnit}
                                             />
                                         </Col>
                                     </Form.Row>
@@ -283,8 +349,8 @@ const Basicdata = () => {
                                         <Form.Control
                                             type="text"
                                             name="store"
-                                            value={store}
-                                            onChange={updateStore}
+                                        //value={store}
+                                        //onChange={updateStore}
                                         />
                                     </Col>
                                 </Form.Row>
@@ -296,8 +362,8 @@ const Basicdata = () => {
                                         <Form.Control
                                             type="text"
                                             name="whereStore"
-                                            value={whereStore}
-                                            onChange={updateWherestore}
+                                        //value={whereStore}
+                                        //onChange={updateWherestore}
                                         />
                                     </Col>
                                 </Form.Row>
@@ -309,8 +375,8 @@ const Basicdata = () => {
                                         <Form.Control
                                             type="number"
                                             name="quantity"
-                                            value={quantity}
-                                            onChange={updateQuantity}
+                                        //value={quantity}
+                                        //onChange={updateQuantity}
                                         />
                                     </Col>
                                 </Form.Row>
@@ -322,8 +388,8 @@ const Basicdata = () => {
                                         <Form.Control
                                             type="number"
                                             name="priceUnit"
-                                            value={priceUnit}
-                                            onChange={updatePriceunit}
+                                        //value={priceUnit}
+                                        //onChange={updatePriceunit}
                                         />
                                     </Col>
                                 </Form.Row>
@@ -334,8 +400,8 @@ const Basicdata = () => {
                                         <Form.Control
                                             type="text"
                                             name="discount"
-                                            value={discount}
-                                            onChange={updateDiscount}
+                                        //value={discount}
+                                        //onChange={updateDiscount}
                                         />
                                     </Col>
                                 </Form.Row>
@@ -347,8 +413,8 @@ const Basicdata = () => {
                                         <Form.Control
                                             type="number"
                                             name="price"
-                                            value={price}
-                                            onChange={updatePrice}
+                                        //value={price}
+                                        //onChange={updatePrice}
                                         />
                                     </Col>
                                 </Form.Row>
@@ -364,8 +430,8 @@ const Basicdata = () => {
                                             <Form.Control
                                                 type="text"
                                                 name="productNo"
-                                                value={productNo}
-                                                onChange={updateProductno}
+                                            //value={productNo}
+                                            //onChange={updateProductno}
                                             />
                                         </Col>
                                     </Form.Row>
@@ -378,8 +444,8 @@ const Basicdata = () => {
                                             <Form.Control
                                                 type="text"
                                                 name="productName"
-                                                value={productName}
-                                                onChange={updateProductname}
+                                            //value={productName}
+                                            //onChange={updateProductname}
                                             />
                                         </Col>
                                     </Form.Row>
@@ -392,8 +458,8 @@ const Basicdata = () => {
                                             <Form.Control
                                                 type="text"
                                                 name="unit"
-                                                value={unit}
-                                                onChange={updateUnit}
+                                            //value={unit}
+                                            //onChange={updateUnit}
                                             />
                                         </Col>
                                     </Form.Row>
@@ -405,8 +471,8 @@ const Basicdata = () => {
                                         <Form.Control
                                             type="text"
                                             name="store"
-                                            value={store}
-                                            onChange={updateStore}
+                                        //value={store}
+                                        //onChange={updateStore}
                                         />
                                     </Col>
                                 </Form.Row>
@@ -418,8 +484,8 @@ const Basicdata = () => {
                                         <Form.Control
                                             type="text"
                                             name="whereStore"
-                                            value={whereStore}
-                                            onChange={updateWherestore}
+                                        //value={whereStore}
+                                        //onChange={updateWherestore}
                                         />
                                     </Col>
                                 </Form.Row>
@@ -431,8 +497,8 @@ const Basicdata = () => {
                                         <Form.Control
                                             type="number"
                                             name="quantity"
-                                            value={quantity}
-                                            onChange={updateQuantity}
+                                        //value={quantity}
+                                        //onChange={updateQuantity}
                                         />
                                     </Col>
                                 </Form.Row>
@@ -444,8 +510,8 @@ const Basicdata = () => {
                                         <Form.Control
                                             type="number"
                                             name="priceUnit"
-                                            value={priceUnit}
-                                            onChange={updatePriceunit}
+                                        //value={priceUnit}
+                                        //onChange={updatePriceunit}
                                         />
                                     </Col>
                                 </Form.Row>
@@ -456,8 +522,8 @@ const Basicdata = () => {
                                         <Form.Control
                                             type="text"
                                             name="discount"
-                                            value={discount}
-                                            onChange={updateDiscount}
+                                        //value={discount}
+                                        //onChange={updateDiscount}
                                         />
                                     </Col>
                                 </Form.Row>
@@ -469,8 +535,8 @@ const Basicdata = () => {
                                         <Form.Control
                                             type="number"
                                             name="price"
-                                            value={price}
-                                            onChange={updatePrice}
+                                        //value={price}
+                                        //onChange={updatePrice}
                                         />
                                     </Col>
                                 </Form.Row>
@@ -512,9 +578,8 @@ const Basicdata = () => {
                     </tbody>
                 </Table>
             </div>
-            <Button variant="success" size="sm" type="submit">Save</Button>
         </div>
     );
 };
 
-export default Basicdata;
+export default Edit;

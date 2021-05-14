@@ -1,22 +1,28 @@
-nav>ul{
+.form-crud{
+    margin: 0px 15px 0px 15px;
+    margin-top: 5px;
+}
+.detail-price{
     display: flex;
-    background-color: rgba(156, 145, 145, 0.349);
-    text-decoration: none;
-    border-bottom: solid 2px blue;
+    justify-content: space-between;
+    margin: 0px 10px 0px 10px;
+    padding-bottom: 5px;
 }
-nav>ul>li{
-    list-style-type: none;
-    padding: 15px;
+.action-menu{
+    display: flex;
+    padding: 0px 10px 0px 10px ;
+
 }
-nav>ul>li>a:hover{
-    text-decoration: none;
-    color:white;
+.table-responsive{
+    max-width: 99%;
+    border: 1px solid black;
+    margin-left: 10px;
 }
-nav>ul>li>a{
-    color: black;
+.table-responsive>Table{
+border: 1px solid black;
 }
-nav>ul>li:hover{
-    background-color: blue;
+.action-menu>Button{
+    color: rgb(36, 97, 209);
 }
 .topnav-menu{
     display: flex;

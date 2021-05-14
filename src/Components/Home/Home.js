@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <div className="home">
             <div className="top-menu">
-                <div className="new-btn"><Link to="/form/basicdata"><Button variant="success" size="sm">New</Button></Link></div>
+                <div className="new-btn"><Link to="/create"><Button variant="success" size="sm">New</Button></Link></div>
                 <Link to="/form"><Button variant="success" size="sm">+</Button></Link>
             </div><hr/>
             <div className="topnav-actionmenu">
@@ -89,21 +89,21 @@ const Home = () => {
                     </thead>
                     <tbody>
                         {orders.map(order =>
-
-                            <tr key={order.id}>
+                            <tr key ={order.Inform_id}>
                                 <td></td>
-                                <td><EditIcon color="primary"/>
-                                    <Link to={"/delete/" + order.Order_id}><DeleteIcon color="secondary"/></Link>
+                                <td>
+                                    <Link to={"/edit/"+order.Inform_id}><EditIcon color="primary"/></Link>
+                                    <Link to={"/delete/" + order.Inform_id}><DeleteIcon color="secondary"/></Link>
                                 </td>
                                 <td>{order.Inform_date}</td>
                                 <td>{order.Inform_id}</td>
                                 <td>{order.Sale_id}</td>
                                 <td>{order.Sale_name}</td>
-                                <td >{order.total}</td>
+                                <td>{order.total}</td>
                                 <td>{order.Status}</td>
                                 <td>{order.Contract}</td>
                             </tr>
-                        )}
+                            )}
                     </tbody>
                 </Table>
             </div>
