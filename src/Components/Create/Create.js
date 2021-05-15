@@ -97,7 +97,7 @@ const Create = () => {
     const addOrders = e => {
         e.preventDefault(alert("บันทึกเรียบร้อย!"));
         setOrders([...orders, { Sale_id: codesale, Inform_id: no, Inform_date: date, Sale_name: saleName, Want_date: wantDate, End_date: endDate, Contract: contractName, Credit: credit, Sent_date: sentDate, Bill: bill }])
-    };
+    };console.log(orders)
 
     return (
         <div className="basicdata">

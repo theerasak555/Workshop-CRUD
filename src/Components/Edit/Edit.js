@@ -14,21 +14,21 @@ const Edit = () => {
     const { Inform_id } = useParams();
 
     const order = orders.filter((order) =>
-        order.Inform_id = Inform_id);
+        order.Inform_id == Inform_id);console.log(order)
 
     //input
-    const [codesale, setCodesale] = useState(order[0].codesale);
-    const [no, setNo] = useState(order[0].no);
-    const [date, setDate] = useState(order[0].date);
-    const [saleName, setSalename] = useState(order[0].saleName);
-    const [wantDate, setWantdate] = useState(order[0].wantDate);
-    const [endDate, setEnddate] = useState(order[0].endDate);
-    const [contractName, setContractname] = useState(order[0].contractName);
-    const [credit, setCredit] = useState(order[0].credit);
-    const [sentDate, setSentdate] = useState(order[0].sentDate);
-    const [bill, setBill] = useState(order[0].bill);
+    const [codesale, setCodesale] = useState(order[0].Sale_id);
+    const [no, setNo] = useState(order[0].Inform_id);
+    const [date, setDate] = useState(order[0].Inform_date);
+    const [saleName, setSalename] = useState(order[0].Sale_name);
+    const [wantDate, setWantdate] = useState(order[0].Want_date);
+    const [endDate, setEnddate] = useState(order[0].End_date);
+    const [contractName, setContractname] = useState(order[0].Contract);
+    const [credit, setCredit] = useState(order[0].Credit);
+    const [sentDate, setSentdate] = useState(order[0].Sent_date);
+    const [bill, setBill] = useState(order[0].Bill);
 
-    const [productNo, setProductno] = useState(order[0].productNo);
+    {/*const [productNo, setProductno] = useState(order[0].productNo);
     const [productName, setProductname] = useState(order[0].productName);
     const [unit, setUnit] = useState(order[0].unit);
     const [store, setStore] = useState(order[0].store);
@@ -36,60 +36,60 @@ const Edit = () => {
     const [quantity, setQuantity] = useState(order[0].quantity);
     const [priceUnit, setPriceunit] = useState(order[0].priceUnit);
     const [discount, setDiscount] = useState(order[0].discount);
-    const [price, setPrice] = useState(order[0].price);
+    const [price, setPrice] = useState(order[0].price);*/}
 
     //edit
     const editCodesale = (e) => {
         setCodesale(e.target.value);
         const edited_codesale = codesale;
-        order[0].codesale = edited_codesale;
+        order[0].Sale_id = edited_codesale;
     };
     const editNo = (e) => {
         setNo(e.target.value);
         const edited_no = no;
-        order[0].no = edited_no;
+        order[0].Inform_id = edited_no;
     };
     const editDate = (e) => {
         setDate(e.target.value);
         const edited_date = date;
-        order[0].date = edited_date;
+        order[0].Inform_date = edited_date;
     };
     const editSalename = (e) => {
         setSalename(e.target.value);
         const edited_saleName = saleName;
-        order[0].saleName = edited_saleName;
+        order[0].Sale_name = edited_saleName;
     };
     const editWantdate = (e) => {
         setWantdate(e.target.value);
         const edited_wantDate = wantDate;
-        order[0].wantDate = edited_wantDate;
+        order[0].Want_date = edited_wantDate;
     };
     const editEnddate = (e) => {
         setEnddate(e.target.value);
         const edited_endDate = endDate;
-        order[0].endDate = edited_endDate;
+        order[0].End_date = edited_endDate;
     };
     const editContractname = (e) => {
         setContractname(e.target.value);
         const edited_contractName = contractName;
-        order[0].contractName = edited_contractName;
+        order[0].Contract = edited_contractName;
     };
     const editCredit = (e) => {
         setCredit(e.target.value);
         const edited_credit = credit;
-        order[0].credit = edited_credit;
+        order[0].Credit = edited_credit;
     };
     const editSentdate = (e) => {
         setSentdate(e.target.value);
         const edited_sentDate = sentDate;
-        order[0].sentDate = edited_sentDate;
+        order[0].Sent_date = edited_sentDate;
     };
     const editBill = (e) => {
         setBill(e.target.value);
         const edited_bill = bill;
-        order[0].bill = edited_bill;
+        order[0].Bill = edited_bill;
     };
-    const editProductno = (e) => {
+    {/*const editProductno = (e) => {
         setProductno(e.target.value);
         const edited_productNo = productNo;
         order[0].productNo = edited_productNo;
@@ -133,12 +133,12 @@ const Edit = () => {
         setPrice(e.target.value);
         const edited_price = price;
         order[0].price = edited_price;
-    };
+    };*/}
 
     const editOrder = (e) => {
         e.preventDefault();
         setOrders([...orders])
-    }
+    }; console.log(editOrder)
 
     return (
         <div className="basicdata">
@@ -146,7 +146,7 @@ const Edit = () => {
                 <Link to="/"><h5>{"< New Purchase"}</h5></Link>
                 <div className="topnav-button">
                     <Button variant="primary" size="sm">Preview</Button>{" "}
-                    <Button className="action_btn" variant="success" size="sm" type="submit" onSubmit={() => editOrder}>Save</Button>{" "}
+                    <Button className="action_btn" variant="success" size="sm" type="submit" onSubmit={()=> editOrder}>Save</Button>{" "}
                     <Button variant="danger" size="sm">Close</Button>
                 </div>
             </div>
@@ -164,8 +164,8 @@ const Edit = () => {
                                     name="codesale"
                                     value={codesale}
                                     onChange={editCodesale}
-                                    placeholder={order[0].codesale}
-                                    required />
+                                    placeholder={order[0].Sale_id}
+                                     />
                             </Col>
                             <Form.Label column sm="1"><span style={{ color: "red" }}>*</span>เลขที่เอกสาร</Form.Label>
                             <Col >
@@ -174,7 +174,7 @@ const Edit = () => {
                                     name="no"
                                     value={no}
                                     onChange={editNo}
-                                    placeholder={order[0].no}
+                                    placeholder={order[0].Inform_id}
                                     
                                 />
                             </Col>
@@ -185,7 +185,7 @@ const Edit = () => {
                                     name="date"
                                     value={date}
                                     onChange={editDate}
-                                    placeholder={order[0].date}
+                                    placeholder={order[0].Inform_date}
                                     
                                 />
                             </Col>
@@ -199,7 +199,7 @@ const Edit = () => {
                                     name="saleName"
                                     value={saleName}
                                     onChange={editSalename}
-                                    placeholder={order[0].saleName}
+                                    placeholder={order[0].Sale_name}
                                 />
                             </Col>
                             <Form.Label column sm="1"><span style={{ visibility: "hidden" }}>*</span>ต้องการภายใน (วัน)</Form.Label>
@@ -209,7 +209,7 @@ const Edit = () => {
                                     name="wantDate"
                                     value={wantDate}
                                     onChange={editWantdate}
-                                    placeholder={order[0].wantDate}
+                                    placeholder={order[0].Want_date}
                                 />
                             </Col>
                             <Form.Label column sm="1"><span style={{ visibility: "hidden" }}>*</span>วันที่สิ้นสุด</Form.Label>
@@ -219,7 +219,7 @@ const Edit = () => {
                                     name="endDate"
                                     value={endDate}
                                     onChange={editEnddate}
-                                    placeholder={order[0].endDate}
+                                    placeholder={order[0].End_date}
                                 />
                             </Col>
                         </Form.Row><br />
@@ -232,7 +232,7 @@ const Edit = () => {
                                     name="contractName"
                                     value={contractName}
                                     onChange={editContractname}
-                                    placeholder={order[0].contractName}
+                                    placeholder={order[0].Contract}
                                 />
                             </Col>
                             <Form.Label column sm="1"><span style={{ visibility: "hidden" }}>*</span>เครดิต (วัน)</Form.Label>
@@ -242,7 +242,7 @@ const Edit = () => {
                                     name="credit"
                                     value={credit}
                                     onChange={editCredit}
-                                    placeholder={order[0].credit}
+                                    placeholder={order[0].Credit}
                                 />
                             </Col>
                             <Form.Label column sm="1"><span style={{ visibility: "hidden" }}>*</span>กำหนดส่งของ</Form.Label>
@@ -252,7 +252,7 @@ const Edit = () => {
                                     name="sentDate"
                                     value={sentDate}
                                     onChange={editSentdate}
-                                    placeholder={order[0].sentDate}
+                                    placeholder={order[0].Sent_date}
                                 />
                             </Col>
                         </Form.Row><br />
@@ -264,7 +264,7 @@ const Edit = () => {
                                     name="bill"
                                     value={bill}
                                     onChange={editBill}
-                                    placeholder={order[0].bill}
+                                    placeholder={order[0].Bill}
                                 />
                             </Col>
                         </Form.Row>

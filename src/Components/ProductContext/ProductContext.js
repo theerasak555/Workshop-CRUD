@@ -14,7 +14,7 @@ export const ProductProvider = (props) => {
             "Quantity": "5",
             "Unit_Price": "3190.00",
             "Discount": "@50",
-            "Price": "15700.00"
+            "Price": 15700.00
         },
         {
             "Product_id": "IC6108-029",
@@ -25,7 +25,7 @@ export const ProductProvider = (props) => {
             "Quantity": "5",
             "Unit_Price": "5290.00",
             "Discount": "200",
-            "Price": "26250.00"
+            "Price": 26250.00
         }
   ]);
 
