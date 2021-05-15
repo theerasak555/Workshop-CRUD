@@ -7,7 +7,7 @@ import './Delete.css'
 
 const Delete = () => {
   const [orders, setOrders] = useContext(OrderContext); 
-  const { Inform_id } = useParams();
+  const {Inform_id} = useParams();
 
   const deleteUser = (Inform_id) => {
     const order = orders.filter((order) => order.Inform_id != Inform_id);

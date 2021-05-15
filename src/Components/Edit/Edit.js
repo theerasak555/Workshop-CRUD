@@ -18,7 +18,7 @@ const Edit = () => {
 
     //input
     const [codesale, setCodesale] = useState(order[0].Sale_id);
-    const [no, setNo] = useState(order[0].Inform_id);
+    //const [no, setNo] = useState(order[0].Inform_id);
     const [date, setDate] = useState(order[0].Inform_date);
     const [saleName, setSalename] = useState(order[0].Sale_name);
     const [wantDate, setWantdate] = useState(order[0].Want_date);
@@ -44,11 +44,7 @@ const Edit = () => {
         const edited_codesale = codesale;
         order[0].Sale_id = edited_codesale;
     };
-    const editNo = (e) => {
-        setNo(e.target.value);
-        const edited_no = no;
-        order[0].Inform_id = edited_no;
-    };
+   
     const editDate = (e) => {
         setDate(e.target.value);
         const edited_date = date;
@@ -143,7 +139,7 @@ const Edit = () => {
     return (
         <div className="basicdata">
             <div className="topnav-menu">
-                <Link to="/"><h5>{"< New Purchase"}</h5></Link>
+                <Link to="/" style={{textDecoration:"none"}}><h5>{"< New Purchase"}</h5></Link>
                 <div className="topnav-button">
                     <Button variant="primary" size="sm">Preview</Button>{" "}
                     <Button className="action_btn" variant="success" size="sm" type="submit" onSubmit={()=> editOrder}>Save</Button>{" "}
@@ -172,10 +168,8 @@ const Edit = () => {
                                 <Form.Control
                                     type="text"
                                     name="no"
-                                    value={no}
-                                    onChange={editNo}
+                                    readOnly
                                     placeholder={order[0].Inform_id}
-                                    
                                 />
                             </Col>
                             <Form.Label column sm="1"><span style={{ color: "red" }}>*</span>วันที่เอกสาร</Form.Label>

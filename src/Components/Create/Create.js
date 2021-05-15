@@ -102,7 +102,7 @@ const Create = () => {
     return (
         <div className="basicdata">
             <div className="topnav-menu">
-                <Link to="/"><h5>{"< New Purchase"}</h5></Link>
+                <Link to="/" style={{textDecoration:"none"}}><h5>{"< New Purchase"}</h5></Link>
                 <div className="topnav-button">
                     <Button variant="primary" size="sm">Preview</Button>{" "}
                     <Button className="action_btn" variant="success" size="sm" type="submit" onClick={addOrders}>Save</Button>{" "}

@@ -89,7 +89,7 @@ const Home = () => {
                     </thead>
                     <tbody>
                         {orders.map(order =>
-                            <tr key ={order.Inform_id}>
+                            <tr key ={`${order.id+order.Inform_id}`}>
                                 <td></td>
                                 <td>
                                     <Link to={"/edit/"+order.Inform_id}><EditIcon color="primary"/></Link>
