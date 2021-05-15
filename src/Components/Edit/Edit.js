@@ -142,7 +142,7 @@ const Edit = () => {
                 <Link to="/" style={{textDecoration:"none"}}><h5>{"< New Purchase"}</h5></Link>
                 <div className="topnav-button">
                     <Button variant="primary" size="sm">Preview</Button>{" "}
-                    <Button className="action_btn" variant="success" size="sm" type="submit" onSubmit={()=> editOrder}>Save</Button>{" "}
+                    <Button className="action_btn" variant="success" size="sm" type="submit" onSubmit={()=> editOrder} onClick={()=> alert("แก้ไขเรียบร้อย")}>Save</Button>{" "}
                     <Button variant="danger" size="sm">Close</Button>
                 </div>
             </div>
